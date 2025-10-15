@@ -1,0 +1,9 @@
+ bash scripts_pedestrian/autoeval_no_meta/citypersons.sh
+ bash scripts_pedestrian/autoeval_no_meta/cityscapes.sh
+ bash scripts_pedestrian/autoeval_no_meta/coco.sh  
+ bash scripts_pedestrian/autoeval_no_meta/crowdhuman.sh
+ bash scripts_pedestrian/autoeval_no_meta/ExDark.sh
+ bash scripts_pedestrian/autoeval_no_meta/kitti.sh
+ bash scripts_pedestrian/autoeval_no_meta/self_driving.sh
+ bash scripts_pedestrian/autoeval_no_meta/caltech.sh
+ bash scripts_pedestrian/autoeval_no_meta/ECP.sh

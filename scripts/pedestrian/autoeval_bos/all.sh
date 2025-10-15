@@ -1,0 +1,9 @@
+bash scripts_pedestrian/autoeval_bos/self_driving.sh
+bash scripts_pedestrian/autoeval_bos/citypersons.sh
+bash scripts_pedestrian/autoeval_bos/cityscapes.sh
+bash scripts_pedestrian/autoeval_bos/coco.sh  
+bash scripts_pedestrian/autoeval_bos/crowdhuman.sh
+bash scripts_pedestrian/autoeval_bos/ExDark.sh
+bash scripts_pedestrian/autoeval_bos/kitti.sh
+bash scripts_pedestrian/autoeval_bos/caltech.sh
+bash scripts_pedestrian/autoeval_bos/ECP.sh

@@ -1,0 +1,8 @@
+# python dtool_person/metaset/generate_coco_meta_set.py
+python dtool_person/metaset/generate_citypersons_meta_set.py
+python dtool_person/metaset/generate_cityscapes_meta_set.py
+python dtool_person/metaset/generate_crowdhuman_meta_set.py
+python dtool_person/metaset/generate_Exdark_meta_set.py
+python dtool_person/metaset/generate_kitti_meta_set.py
+python dtool_person/metaset/generate_self_driving_meta_set.py
+
