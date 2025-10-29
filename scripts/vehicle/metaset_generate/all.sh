@@ -4,7 +4,6 @@ python dtool/metaset/generate_cityscapes_meta_set.py
 python dtool/metaset/generate_detrac_meta_set.py
 python dtool/metaset/generate_exdark_meta_set.py
 python dtool/metaset/generate_kitti_meta_set.py
-
 python dtool/metaset/generate_self_driving_car_meta_set.py
 python dtool/metaset/generate_roboflow_car_meta_set.py
 python dtool/metaset/generate_udacity_car_meta_set.py

@@ -139,7 +139,10 @@ def parse_args():
         nargs='+', 
         type=int,
         default=[])
-
+    parser.add_argument('--task', default='car', type=str, help='task (e.g., car, pedestrian)')
+    parser.add_argument('--detector', default='retinanet', type=str, help='task (e.g., retinanet, faster_rcnn)')
+    parser.add_argument('--backbone', default='r50', type=str, help='backbone (e.g., r50, swin)')
+    
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
@@ -800,7 +803,7 @@ def main():
                     mean_cls_large_k[area_idx].append(np.mean(cls_areaRng[area_idx][cls_areaRng[area_idx]>score_thr]).tolist())
                     results_cls_entropy_small_k[area_idx].append(np.mean(entropy_areaRng[area_idx][cls_areaRng[area_idx]<score_thr]).tolist())
 
-            NAME_DIR  = "./result/car_inc/BoS/r50_retina/" + str(args.tag1)
+            NAME_DIR  = f"./result/{args.task}_inc/BoS/{args.detector}_{args.backbone}/" + str(args.tag1)
             if not os.path.exists(NAME_DIR):
                 os.makedirs(NAME_DIR)
 

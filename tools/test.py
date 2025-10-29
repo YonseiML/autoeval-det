@@ -151,6 +151,9 @@ def parse_args():
     parser.add_argument('--slope_con', default=-10, type=int, help='k_C')
     parser.add_argument('--slope_rel', default=20, type=int, help='k_R')
     parser.add_argument('--conf_th', default=0.4, type=int, help='c')
+    parser.add_argument('--task', default='car', type=str, help='task (e.g., car, pedestrian)')
+    parser.add_argument('--detector', default='retinanet', type=str, help='task (e.g., retinanet, faster_rcnn)')
+    parser.add_argument('--backbone', default='r50', type=str, help='backbone (e.g., r50, swin)')
 
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
@@ -468,10 +471,8 @@ def main():
                     mean_cls_large_k[area_idx].append(np.mean(cls_areaRng[area_idx][cls_areaRng[area_idx]>score_thr]).tolist())
                     results_cls_entropy_small_k[area_idx].append(np.mean(entropy_areaRng[area_idx][cls_areaRng[area_idx]<score_thr]).tolist())
             
-            # Change the directory according to 
-            # (1) the task, (vehicle detection or pedestrian detection)
-            # and (2) the model architecture 
-            NAME_DIR  = "./result/car_inc/PCR/r50_retina/" + str(args.tag1)
+            # Change the directory according to metaset (default = {args.task}_inc (for our corrruption-based metaset))
+            NAME_DIR  = f"./result/{args.task}_inc/PCR/{args.detector}_{args.backbone}/" + str(args.tag1)
             if not os.path.exists(NAME_DIR):
                 os.makedirs(NAME_DIR)
 

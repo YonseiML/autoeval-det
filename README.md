@@ -51,26 +51,34 @@ bash scripts/pedestrian/metaset_generate_inc_person/all.sh
 ## Computing PCR Score for AutoEval
 
 ```python
-# Vehicle detection (meta-set) - r50+retinanet
-bash scripts/vehicle/autoeval_PCR/all.sh
+# Vehicle detection (meta-set)
+bash scripts/vehicle/autoeval_PCR/all.sh [DETECTOR] [BACKBONE]
 
-# Vehicle detection (test set) - r50+retinanet
-bash scripts/vehicle/autoeval_no_meta/all.sh
+# For Retinanet+R50 variant
+bash scripts/vehicle/autoeval_PCR/all.sh retinanet r50
 
-# Pedestrian detection (meta-set) - r50+retinanet
-bash scripts/pedestrian/autoeval_PCR/all.sh
+# Vehicle detection (test set)
+bash scripts/vehicle/autoeval_no_meta/all.sh [DETECTOR] [BACKBONE]
 
-# Pedestrian detection (test set) - r50+retinanet
-bash scripts/pedestrian/autoeval_no_meta/all.sh
+# For Retinanet+R50 variant
+bash scripts/vehicle/autoeval_no_meta/all.sh retinanet r50
+
+# Pedestrian detection (meta-set)
+bash scripts/pedestrian/autoeval_PCR/all.sh [DETECTOR] [BACKBONE]
+
+# For Retinanet+R50 variant
+bash scripts/pedestrian/autoeval_PCR/all.sh retinanet r50
+
+# Pedestrian detection (test set)
+bash scripts/pedestrian/autoeval_no_meta/all.sh [DETECTOR] [BACKBONE]
+
+# For Retinanet+R50 variant
+bash scripts/pedestrian/autoeval_no_meta/all.sh retinanet r50
 ```
-The current version is hard-coded to evaluate **RetinaNet+R50**, but you can change the code to evaluate other models: **RetinaNet+Swin**, **FasterRCNN+R50**, **FasterRCNN+Swin**.
-To do so, you can change the config and model path in *all* files under `scripts/*/*/*.sh`:
-```python
-configs/{DETECTOR}/{CONFIG} ./checkpoints/{MODEL}/epoch_36.pth
-```
-* `{DETECTOR} = retinanet, faster_rcnn`
-* `{CONFIG} = {DETECTOR}_{BACKBONE}_1x_coco_{TASK}` where `{BACKBONE} = r50, swin`, `{TASK} = car, person`; e.g., `retinanet_r50_fpn_1x_coco_car`, `faster_rcnn_swin_fpn_1x_coco_person`.
-* `{MODEL} = {BACKBONE}_{DETECTOR_SHORT}_{TASK}` where `{DETECTOR_SHORT} = retina, faster`; e.g., `r50_retina_car`, `swin_faster_person`.
+To evaluate using a different model, modify the config accordingly.
+
+* `[DETECTOR] : retinanet, faster_rcnn`
+* `[BACKBONE] : r50, swin`.
 
 ## Computing RMSE
 ```python

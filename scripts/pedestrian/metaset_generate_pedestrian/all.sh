@@ -1,0 +1,9 @@
+python dtool_pedestrian/metaset/generate_caltech_meta_set.py
+python dtool_pedestrian/metaset/generate_citypersons_meta_set.py
+python dtool_pedestrian/metaset/generate_cityscapes_meta_set.py
+python dtool_pedestrian/metaset/generate_coco_meta_set.py
+python dtool_pedestrian/metaset/generate_crowdhuman_meta_set.py
+python dtool_pedestrian/metaset/generate_ECP_meta_set.py
+python dtool_pedestrian/metaset/generate_Exdark_meta_set.py
+python dtool_pedestrian/metaset/generate_kitti_meta_set.py
+python dtool_pedestrian/metaset/generate_self_driving_meta_set.py
